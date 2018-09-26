@@ -10,23 +10,26 @@ import UIKit
 
 class BusinessCell: UITableViewCell {
     
-    
     @IBOutlet weak var thumbviewimage: UIImageView!
     
     @IBOutlet weak var namelabel: UILabel!
     
-    @IBOutlet weak var distancelabel: UILabel!
-    
     @IBOutlet weak var ratingsimageview: UIImageView!
-    
-    @IBOutlet weak var reviewcountlabel: UILabel!
     
     @IBOutlet weak var addresslabel: UILabel!
     
+    @IBOutlet weak var reviewcountlabel: UILabel!
+    
     @IBOutlet weak var categorylabel: UILabel!
+    
+    @IBOutlet weak var distancelabel: UILabel!
+    
+    
     
     var business: Business! {
         didSet {
+            
+            
             namelabel.text = business.name
             thumbviewimage.setImageWith(business.imageURL!)
             categorylabel.text = business.categories
@@ -35,7 +38,6 @@ class BusinessCell: UITableViewCell {
             ratingsimageview.image = business.ratingImage
             
             distancelabel.text = business.distance
-            
             
         }
     }
