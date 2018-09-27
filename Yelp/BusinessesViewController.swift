@@ -20,7 +20,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         
-     
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,16 +29,16 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
-                self.businesses = businesses
-                self.tableView.reloadData()
-                if let businesses = businesses {
-                    for business in businesses {
-                        print(business.name!)
-                        print(business.address!)
-                    }
+            self.businesses = businesses
+            self.tableView.reloadData()
+            if let businesses = businesses {
+                for business in businesses {
+                    print(business.name!)
+                    print(business.address!)
                 }
-            
             }
+            
+        }
         )
         
         
@@ -56,7 +56,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         } else {
             return 0
         }
-       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,5 +68,3 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
 }
-    
-
